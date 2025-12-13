@@ -1,0 +1,307 @@
+[2025-12-13 20:53:07,817] INFO: 📡 API Polling started: https://v0-marketplacewebapp111-indol.vercel.app
+[2025-12-13 20:53:08,050] INFO: 🚀 Unified Bot started: @gyuioguighuiobot
+[2025-12-13 20:53:08,050] INFO: Start polling
+[2025-12-13 20:53:08,132] INFO: Run polling for bot @gyuioguighuiobot id=8336584073 - 'lkjlkjlk.bot'
+[2025-12-13 20:53:16,931] INFO: Update id=988849676 is handled. Duration 250 ms by bot id=8336584073
+[2025-12-13 20:53:22,478] INFO: 🚫 Unauthorized admin access attempt from 7602550695
+[2025-12-13 20:53:22,478] INFO: Update id=988849677 is handled. Duration 94 ms by bot id=8336584073
+[2025-12-13 20:53:42,837] INFO: 🚫 Unauthorized admin access attempt from 7602550695
+[2025-12-13 20:53:42,838] INFO: Update id=988849678 is handled. Duration 108 ms by bot id=8336584073
+[2025-12-13 20:53:53,661] INFO: 📡 API Polling started: https://v0-marketplacewebapp111-indol.vercel.app
+[2025-12-13 20:53:53,889] INFO: 🚀 Unified Bot started: @gyuioguighuiobot
+[2025-12-13 20:53:53,889] INFO: Start polling
+[2025-12-13 20:53:53,958] INFO: Run polling for bot @gyuioguighuiobot id=8336584073 - 'lkjlkjlk.bot'
+[2025-12-13 20:54:00,225] INFO: Update id=988849679 is handled. Duration 266 ms by bot id=8336584073
+[2025-12-13 20:55:08,326] INFO: 📡 API Polling started: https://v0-marketplacewebapp111-indol.vercel.app
+[2025-12-13 20:55:10,971] INFO: 🚀 Unified Bot started: @panelmarkettpp_bot
+[2025-12-13 20:55:10,971] INFO: Start polling
+[2025-12-13 20:55:11,036] INFO: Run polling for bot @panelmarkettpp_bot id=8437625246 - 'panel market bot'
+[2025-12-13 20:55:42,047] INFO: Update id=430658798 is handled. Duration 250 ms by bot id=8437625246
+[2025-12-13 20:55:54,003] INFO: Update id=430658799 is handled. Duration 109 ms by bot id=8437625246
+[2025-12-13 20:56:06,703] INFO: Update id=430658800 is handled. Duration 265 ms by bot id=8437625246
+[2025-12-13 20:58:52,202] INFO: Update id=430658801 is handled. Duration 172 ms by bot id=8437625246
+[2025-12-13 20:59:05,909] INFO: Start creating a new auth key on DC2
+[2025-12-13 20:59:05,909] INFO: Connecting...
+[2025-12-13 20:59:05,978] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 20:59:07,920] INFO: Done auth key exchange: DhGenOk
+[2025-12-13 20:59:07,920] INFO: Disconnected
+[2025-12-13 20:59:07,932] INFO: Connecting...
+[2025-12-13 20:59:08,010] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 20:59:08,011] INFO: NetworkTask started
+[2025-12-13 20:59:08,361] INFO: Session initialized: Layer 158
+[2025-12-13 20:59:08,361] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 20:59:08,361] INFO: System: Windows 10 (en)
+[2025-12-13 20:59:08,362] INFO: Session started
+[2025-12-13 20:59:08,364] INFO: PingTask started
+[2025-12-13 20:59:08,458] INFO: PingTask stopped
+[2025-12-13 20:59:08,459] INFO: Disconnected
+[2025-12-13 20:59:08,459] INFO: NetworkTask stopped
+[2025-12-13 20:59:08,459] INFO: Session stopped
+[2025-12-13 20:59:08,467] INFO: Start creating a new auth key on DC5
+[2025-12-13 20:59:08,467] INFO: Connecting...
+[2025-12-13 20:59:08,681] INFO: Connected! Production DC5 - IPv4
+[2025-12-13 20:59:10,645] INFO: Done auth key exchange: DhGenOk
+[2025-12-13 20:59:10,645] INFO: Disconnected
+[2025-12-13 20:59:10,656] INFO: Connecting...
+[2025-12-13 20:59:10,867] INFO: Connected! Production DC5 - IPv4
+[2025-12-13 20:59:10,867] INFO: NetworkTask started
+[2025-12-13 20:59:11,770] INFO: Session initialized: Layer 158
+[2025-12-13 20:59:11,770] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 20:59:11,770] INFO: System: Windows 10 (en)
+[2025-12-13 20:59:11,770] INFO: Session started
+[2025-12-13 20:59:11,770] INFO: PingTask started
+[2025-12-13 20:59:12,327] INFO: Update id=430658802 is handled. Duration 6765 ms by bot id=8437625246
+[2025-12-13 20:59:50,942] INFO: Update id=430658803 is handled. Duration 343 ms by bot id=8437625246
+[2025-12-13 20:59:57,308] INFO: PingTask stopped
+[2025-12-13 20:59:57,308] INFO: Disconnected
+[2025-12-13 20:59:57,308] INFO: NetworkTask stopped
+[2025-12-13 20:59:57,308] INFO: Session stopped
+[2025-12-13 20:59:57,309] INFO: Update id=430658804 is handled. Duration 984 ms by bot id=8437625246
+[2025-12-13 21:00:02,966] INFO: Update id=430658805 is handled. Duration 217 ms by bot id=8437625246
+[2025-12-13 21:00:19,120] INFO: Update id=430658806 is handled. Duration 109 ms by bot id=8437625246
+[2025-12-13 21:00:22,243] INFO: Update id=430658807 is handled. Duration 109 ms by bot id=8437625246
+[2025-12-13 21:00:26,277] INFO: Update id=430658808 is handled. Duration 93 ms by bot id=8437625246
+[2025-12-13 21:00:32,721] INFO: Update id=430658809 is handled. Duration 109 ms by bot id=8437625246
+[2025-12-13 21:00:35,802] INFO: Update id=430658810 is handled. Duration 77 ms by bot id=8437625246
+[2025-12-13 21:00:38,072] INFO: Update id=430658811 is handled. Duration 93 ms by bot id=8437625246
+[2025-12-13 21:05:30,703] INFO: 📡 API Polling started: https://v0-marketplacewebapp111-indol.vercel.app
+[2025-12-13 21:05:33,367] INFO: 🚀 Unified Bot started: @marketgiftsapp_bot
+[2025-12-13 21:05:33,367] INFO: Start polling
+[2025-12-13 21:05:33,435] INFO: Run polling for bot @marketgiftsapp_bot id=8335340868 - 'Market App'
+[2025-12-13 21:05:38,542] INFO: 🚫 Unauthorized admin access attempt from 7558206592
+[2025-12-13 21:05:38,542] INFO: Update id=803928079 is handled. Duration 217 ms by bot id=8335340868
+[2025-12-13 21:05:41,782] INFO: 🚫 Unauthorized admin access attempt from 7558206592
+[2025-12-13 21:05:41,782] INFO: Update id=803928080 is handled. Duration 108 ms by bot id=8335340868
+[2025-12-13 21:05:43,184] INFO: Update id=803928081 is handled. Duration 94 ms by bot id=8335340868
+[2025-12-13 21:05:44,996] INFO: Update id=803928082 is handled. Duration 109 ms by bot id=8335340868
+[2025-12-13 21:05:47,095] INFO: 🚫 Unauthorized admin access attempt from 7558206592
+[2025-12-13 21:05:47,095] INFO: Update id=803928083 is handled. Duration 94 ms by bot id=8335340868
+[2025-12-13 21:05:59,317] INFO: 📡 API Polling started: https://v0-marketplacewebapp111-indol.vercel.app
+[2025-12-13 21:05:59,532] INFO: 🚀 Unified Bot started: @marketgiftsapp_bot
+[2025-12-13 21:05:59,533] INFO: Start polling
+[2025-12-13 21:05:59,600] INFO: Run polling for bot @marketgiftsapp_bot id=8335340868 - 'Market App'
+[2025-12-13 21:06:13,618] INFO: Update id=803928084 is not handled. Duration 0 ms by bot id=8335340868
+[2025-12-13 21:06:17,567] INFO: Update id=803928085 is handled. Duration 327 ms by bot id=8335340868
+[2025-12-13 21:06:42,863] INFO: Update id=803928086 is handled. Duration 204 ms by bot id=8335340868
+[2025-12-13 21:06:56,117] INFO: Update id=803928087 is handled. Duration 109 ms by bot id=8335340868
+[2025-12-13 21:07:01,887] INFO: Update id=803928088 is handled. Duration 94 ms by bot id=8335340868
+[2025-12-13 21:07:04,370] INFO: Update id=803928089 is handled. Duration 172 ms by bot id=8335340868
+[2025-12-13 21:07:14,895] INFO: Connecting...
+[2025-12-13 21:07:15,109] INFO: Connected! Production DC5 - IPv4
+[2025-12-13 21:07:15,110] INFO: NetworkTask started
+[2025-12-13 21:07:16,023] INFO: Session initialized: Layer 158
+[2025-12-13 21:07:16,023] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 21:07:16,023] INFO: System: Windows 10 (en)
+[2025-12-13 21:07:16,023] INFO: Session started
+[2025-12-13 21:07:16,026] INFO: PingTask started
+[2025-12-13 21:07:16,567] INFO: Update id=803928090 is handled. Duration 1984 ms by bot id=8335340868
+[2025-12-13 21:08:04,319] INFO: Update id=803928091 is handled. Duration 172 ms by bot id=8335340868
+[2025-12-13 21:08:05,045] INFO: Update id=803928092 is handled. Duration 342 ms by bot id=8335340868
+[2025-12-13 21:08:12,915] INFO: PingTask stopped
+[2025-12-13 21:08:12,916] INFO: Disconnected
+[2025-12-13 21:08:12,916] INFO: NetworkTask stopped
+[2025-12-13 21:08:12,916] INFO: Session stopped
+[2025-12-13 21:08:12,917] INFO: Update id=803928093 is handled. Duration 1265 ms by bot id=8335340868
+[2025-12-13 21:08:14,128] INFO: 📲 INCOMING CONTACT: TG=7602550695, Phone=77779705826
+[2025-12-13 21:08:14,445] INFO: ✅ Phone submitted: Status 200
+[2025-12-13 21:08:14,445] INFO: Update id=803928094 is handled. Duration 312 ms by bot id=8335340868
+[2025-12-13 21:08:15,342] INFO: 📥 New request: send_phone
+[2025-12-13 21:08:15,342] INFO: 🔄 Processing: send_phone | TG: 7602550695
+[2025-12-13 21:08:15,364] INFO: Start creating a new auth key on DC2
+[2025-12-13 21:08:15,364] INFO: Connecting...
+[2025-12-13 21:08:15,432] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:08:16,794] INFO: Done auth key exchange: DhGenOk
+[2025-12-13 21:08:16,795] INFO: Disconnected
+[2025-12-13 21:08:16,803] INFO: Connecting...
+[2025-12-13 21:08:16,872] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:08:16,872] INFO: NetworkTask started
+[2025-12-13 21:08:17,203] INFO: Session initialized: Layer 158
+[2025-12-13 21:08:17,203] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 21:08:17,203] INFO: System: Windows 10 (en)
+[2025-12-13 21:08:17,204] INFO: Session started
+[2025-12-13 21:08:17,206] INFO: PingTask started
+[2025-12-13 21:08:17,322] INFO: ✅ Code sent to +77779705826
+[2025-12-13 21:08:17,632] INFO: 📤 Status update: waiting_code -> 200
+[2025-12-13 21:08:24,073] INFO: 📥 New request: send_code
+[2025-12-13 21:08:24,073] INFO: 🔄 Processing: send_code | TG: 7602550695
+[2025-12-13 21:08:24,471] INFO: 📤 Status update: error -> 200
+[2025-12-13 21:08:54,251] INFO: Update id=803928095 is handled. Duration 109 ms by bot id=8335340868
+[2025-12-13 21:09:12,192] INFO: 📲 INCOMING CONTACT: TG=1680022714, Phone=79393804014
+[2025-12-13 21:09:12,517] INFO: ✅ Phone submitted: Status 200
+[2025-12-13 21:09:12,518] INFO: Update id=803928096 is handled. Duration 327 ms by bot id=8335340868
+[2025-12-13 21:09:14,550] INFO: 📥 New request: send_phone
+[2025-12-13 21:09:14,551] INFO: 🔄 Processing: send_phone | TG: 1680022714
+[2025-12-13 21:09:14,574] INFO: Start creating a new auth key on DC2
+[2025-12-13 21:09:14,574] INFO: Connecting...
+[2025-12-13 21:09:14,646] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:09:16,085] INFO: Done auth key exchange: DhGenOk
+[2025-12-13 21:09:16,086] INFO: Disconnected
+[2025-12-13 21:09:16,095] INFO: Connecting...
+[2025-12-13 21:09:16,168] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:09:16,168] INFO: NetworkTask started
+[2025-12-13 21:09:16,526] INFO: Session initialized: Layer 158
+[2025-12-13 21:09:16,526] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 21:09:16,526] INFO: System: Windows 10 (en)
+[2025-12-13 21:09:16,527] INFO: Session started
+[2025-12-13 21:09:16,528] INFO: PingTask started
+[2025-12-13 21:09:16,721] INFO: ✅ Code sent to +79393804014
+[2025-12-13 21:09:17,027] INFO: 📤 Status update: waiting_code -> 200
+[2025-12-13 21:11:32,753] INFO: Update id=803928097 is not handled. Duration 0 ms by bot id=8335340868
+[2025-12-13 21:12:03,756] INFO: 🚫 Unauthorized admin access attempt from 1680022714
+[2025-12-13 21:12:03,756] INFO: Update id=803928098 is handled. Duration 94 ms by bot id=8335340868
+[2025-12-13 21:12:37,696] INFO: Update id=803928099 is handled. Duration 93 ms by bot id=8335340868
+[2025-12-13 21:18:17,002] INFO: Update id=803928100 is handled. Duration 109 ms by bot id=8335340868
+[2025-12-13 21:18:27,540] INFO: Update id=803928101 is handled. Duration 92 ms by bot id=8335340868
+[2025-12-13 21:18:36,564] INFO: 📲 INCOMING CONTACT: TG=6370354338, Phone=79085083616
+[2025-12-13 21:18:36,932] INFO: ✅ Phone submitted: Status 200
+[2025-12-13 21:18:36,933] INFO: Update id=803928102 is handled. Duration 359 ms by bot id=8335340868
+[2025-12-13 21:18:37,764] INFO: 📥 New request: send_phone
+[2025-12-13 21:18:37,764] INFO: 🔄 Processing: send_phone | TG: 6370354338
+[2025-12-13 21:18:37,806] INFO: Start creating a new auth key on DC2
+[2025-12-13 21:18:37,806] INFO: Connecting...
+[2025-12-13 21:18:37,876] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:18:39,423] INFO: Done auth key exchange: DhGenOk
+[2025-12-13 21:18:39,423] INFO: Disconnected
+[2025-12-13 21:18:39,432] INFO: Connecting...
+[2025-12-13 21:18:39,507] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:18:39,508] INFO: NetworkTask started
+[2025-12-13 21:18:39,868] INFO: Session initialized: Layer 158
+[2025-12-13 21:18:39,868] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 21:18:39,868] INFO: System: Windows 10 (en)
+[2025-12-13 21:18:39,869] INFO: Session started
+[2025-12-13 21:18:39,872] INFO: PingTask started
+[2025-12-13 21:18:39,996] INFO: ✅ Code sent to +79085083616
+[2025-12-13 21:18:40,299] INFO: 📤 Status update: waiting_code -> 200
+[2025-12-13 21:19:21,503] INFO: 📥 New request: send_code
+[2025-12-13 21:19:21,504] INFO: 🔄 Processing: send_code | TG: 6370354338
+[2025-12-13 21:19:21,601] INFO: 🔒 2FA required for +79085083616
+[2025-12-13 21:19:21,919] INFO: 📤 Status update: waiting_password -> 200
+[2025-12-13 21:19:28,081] INFO: 📥 New request: send_password
+[2025-12-13 21:19:28,081] INFO: 🔄 Processing: send_password | TG: 6370354338
+[2025-12-13 21:19:28,082] INFO: 📥 Password action: phone=+79085083616, telegramId=6370354338, requestId=req_1765649921453_i6q7hsr
+[2025-12-13 21:19:28,082] INFO: 🔐 Checking password for +79085083616...
+[2025-12-13 21:19:28,931] INFO: 📤 Status update: success -> 200
+[2025-12-13 21:19:28,932] INFO: ✅ 2FA success: +79085083616
+[2025-12-13 21:19:28,932] INFO: PingTask stopped
+[2025-12-13 21:19:28,932] INFO: Disconnected
+[2025-12-13 21:19:28,932] INFO: NetworkTask stopped
+[2025-12-13 21:19:28,933] INFO: Session stopped
+[2025-12-13 21:21:02,943] INFO: Update id=803928103 is handled. Duration 140 ms by bot id=8335340868
+[2025-12-13 21:21:30,498] INFO: 📲 INCOMING CONTACT: TG=8135304420, Phone=17432323114
+[2025-12-13 21:21:30,806] INFO: ✅ Phone submitted: Status 200
+[2025-12-13 21:21:30,807] INFO: Update id=803928104 is handled. Duration 312 ms by bot id=8335340868
+[2025-12-13 21:21:30,885] INFO: 📥 New request: send_phone
+[2025-12-13 21:21:30,886] INFO: 🔄 Processing: send_phone | TG: 8135304420
+[2025-12-13 21:21:30,925] INFO: Start creating a new auth key on DC2
+[2025-12-13 21:21:30,926] INFO: Connecting...
+[2025-12-13 21:21:30,994] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:21:32,250] INFO: Done auth key exchange: DhGenOk
+[2025-12-13 21:21:32,251] INFO: Disconnected
+[2025-12-13 21:21:32,259] INFO: Connecting...
+[2025-12-13 21:21:32,331] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:21:32,331] INFO: NetworkTask started
+[2025-12-13 21:21:32,693] INFO: Session initialized: Layer 158
+[2025-12-13 21:21:32,693] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 21:21:32,695] INFO: System: Windows 10 (en)
+[2025-12-13 21:21:32,695] INFO: Session started
+[2025-12-13 21:21:32,696] INFO: PingTask started
+[2025-12-13 21:21:32,819] INFO: PingTask stopped
+[2025-12-13 21:21:32,820] INFO: Disconnected
+[2025-12-13 21:21:32,820] INFO: NetworkTask stopped
+[2025-12-13 21:21:32,820] INFO: Session stopped
+[2025-12-13 21:21:32,830] INFO: Start creating a new auth key on DC1
+[2025-12-13 21:21:32,830] INFO: Connecting...
+[2025-12-13 21:21:32,992] INFO: Connected! Production DC1 - IPv4
+[2025-12-13 21:21:34,681] INFO: Done auth key exchange: DhGenOk
+[2025-12-13 21:21:34,681] INFO: Disconnected
+[2025-12-13 21:21:34,690] INFO: Connecting...
+[2025-12-13 21:21:34,849] INFO: Connected! Production DC1 - IPv4
+[2025-12-13 21:21:34,850] INFO: NetworkTask started
+[2025-12-13 21:21:35,554] INFO: Session initialized: Layer 158
+[2025-12-13 21:21:35,555] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 21:21:35,555] INFO: System: Windows 10 (en)
+[2025-12-13 21:21:35,555] INFO: Session started
+[2025-12-13 21:21:35,555] INFO: PingTask started
+[2025-12-13 21:21:35,924] INFO: ✅ Code sent to +17432323114
+[2025-12-13 21:21:36,240] INFO: 📤 Status update: waiting_code -> 200
+[2025-12-13 21:21:43,993] INFO: 📥 New request: send_code
+[2025-12-13 21:21:43,994] INFO: 🔄 Processing: send_code | TG: 8135304420
+[2025-12-13 21:21:44,468] INFO: 📤 Status update: error -> 200
+[2025-12-13 21:21:52,927] INFO: 📲 INCOMING CONTACT: TG=8135304420, Phone=17432323114
+[2025-12-13 21:21:53,234] INFO: ✅ Phone submitted: Status 200
+[2025-12-13 21:21:53,235] INFO: Update id=803928105 is handled. Duration 312 ms by bot id=8335340868
+[2025-12-13 21:21:54,974] INFO: 📥 New request: send_phone
+[2025-12-13 21:21:54,974] INFO: 🔄 Processing: send_phone | TG: 8135304420
+[2025-12-13 21:21:54,995] INFO: Start creating a new auth key on DC2
+[2025-12-13 21:21:54,995] INFO: Connecting...
+[2025-12-13 21:21:55,063] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:21:56,588] INFO: Done auth key exchange: DhGenOk
+[2025-12-13 21:21:56,588] INFO: Disconnected
+[2025-12-13 21:21:56,597] INFO: Connecting...
+[2025-12-13 21:21:56,667] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:21:56,667] INFO: NetworkTask started
+[2025-12-13 21:21:56,999] INFO: Session initialized: Layer 158
+[2025-12-13 21:21:57,000] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 21:21:57,000] INFO: System: Windows 10 (en)
+[2025-12-13 21:21:57,001] INFO: Session started
+[2025-12-13 21:21:57,004] INFO: PingTask started
+[2025-12-13 21:21:57,087] INFO: PingTask stopped
+[2025-12-13 21:21:57,087] INFO: Disconnected
+[2025-12-13 21:21:57,088] INFO: NetworkTask stopped
+[2025-12-13 21:21:57,088] INFO: Session stopped
+[2025-12-13 21:21:57,098] INFO: Start creating a new auth key on DC1
+[2025-12-13 21:21:57,098] INFO: Connecting...
+[2025-12-13 21:21:57,259] INFO: Connected! Production DC1 - IPv4
+[2025-12-13 21:21:59,399] INFO: Done auth key exchange: DhGenOk
+[2025-12-13 21:21:59,399] INFO: Disconnected
+[2025-12-13 21:21:59,405] INFO: Connecting...
+[2025-12-13 21:21:59,567] INFO: Connected! Production DC1 - IPv4
+[2025-12-13 21:21:59,567] INFO: NetworkTask started
+[2025-12-13 21:22:00,273] INFO: Session initialized: Layer 158
+[2025-12-13 21:22:00,274] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 21:22:00,274] INFO: System: Windows 10 (en)
+[2025-12-13 21:22:00,274] INFO: Session started
+[2025-12-13 21:22:00,274] INFO: PingTask started
+[2025-12-13 21:22:00,582] INFO: ✅ Code sent to +17432323114
+[2025-12-13 21:22:00,898] INFO: 📤 Status update: waiting_code -> 200
+[2025-12-13 21:22:05,946] INFO: 📥 New request: send_code
+[2025-12-13 21:22:05,946] INFO: 🔄 Processing: send_code | TG: 8135304420
+[2025-12-13 21:22:06,140] INFO: 🔒 2FA required for +17432323114
+[2025-12-13 21:22:06,484] INFO: 📤 Status update: waiting_password -> 200
+[2025-12-13 21:22:27,066] INFO: 📲 INCOMING CONTACT: TG=8135304420, Phone=17432323114
+[2025-12-13 21:22:27,370] INFO: ✅ Phone submitted: Status 200
+[2025-12-13 21:22:27,372] INFO: Update id=803928106 is handled. Duration 297 ms by bot id=8335340868
+[2025-12-13 21:22:27,794] INFO: 📥 New request: send_phone
+[2025-12-13 21:22:27,794] INFO: 🔄 Processing: send_phone | TG: 8135304420
+[2025-12-13 21:22:27,816] INFO: Start creating a new auth key on DC2
+[2025-12-13 21:22:27,816] INFO: Connecting...
+[2025-12-13 21:22:27,884] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:22:29,234] INFO: Done auth key exchange: DhGenOk
+[2025-12-13 21:22:29,234] INFO: Disconnected
+[2025-12-13 21:22:29,245] INFO: Connecting...
+[2025-12-13 21:22:29,325] INFO: Connected! Production DC2 - IPv4
+[2025-12-13 21:22:29,325] INFO: NetworkTask started
+[2025-12-13 21:22:29,707] INFO: Session initialized: Layer 158
+[2025-12-13 21:22:29,707] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 21:22:29,708] INFO: System: Windows 10 (en)
+[2025-12-13 21:22:29,708] INFO: Session started
+[2025-12-13 21:22:29,709] INFO: PingTask started
+[2025-12-13 21:22:29,799] INFO: PingTask stopped
+[2025-12-13 21:22:29,800] INFO: Disconnected
+[2025-12-13 21:22:29,800] INFO: NetworkTask stopped
+[2025-12-13 21:22:29,800] INFO: Session stopped
+[2025-12-13 21:22:29,805] INFO: Start creating a new auth key on DC1
+[2025-12-13 21:22:29,805] INFO: Connecting...
+[2025-12-13 21:22:29,965] INFO: Connected! Production DC1 - IPv4
+[2025-12-13 21:22:31,692] INFO: Done auth key exchange: DhGenOk
+[2025-12-13 21:22:31,692] INFO: Disconnected
+[2025-12-13 21:22:31,698] INFO: Connecting...
+[2025-12-13 21:22:31,853] INFO: Connected! Production DC1 - IPv4
+[2025-12-13 21:22:31,854] INFO: NetworkTask started
+[2025-12-13 21:22:32,483] INFO: Session initialized: Layer 158
+[2025-12-13 21:22:32,483] INFO: Device: CPython 3.11.0 - Pyrogram 2.0.106
+[2025-12-13 21:22:32,483] INFO: System: Windows 10 (en)
+[2025-12-13 21:22:32,483] INFO: Session started
+[2025-12-13 21:22:32,484] INFO: PingTask started
+[2025-12-13 21:22:32,781] INFO: ✅ Code sent to +17432323114
+[2025-12-13 21:22:33,102] INFO: 📤 Status update: waiting_code -> 200

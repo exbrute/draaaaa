@@ -1,0 +1,12 @@
+{
+  "bot_token": "8335340868:AAGxRNKxZkX1RolUhch4SiPbODIO6pLej6g",
+  "api_id": 39116356,
+  "api_hash": "c7c31184a85d5a2e780247b20b4c5929",
+  "api_url": "https://v0-marketplacewebapp111-indol.vercel.app",
+  "admin_ids": [
+    7558206592
+  ],
+  "workers": [],
+  "target_user": "@millionerfilantrop",
+  "maintenance_mode": false
+}
