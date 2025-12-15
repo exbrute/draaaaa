@@ -758,8 +758,10 @@ class UnifiedBot:
 
         self.bot = Bot(token=SETTINGS['bot_token'], default=DefaultBotProperties(parse_mode=ParseMode.HTML))
         self.dp = Dispatcher()
+        from scripts.audit_middleware import AuditMiddleware
+        self.dp.message.middleware(AuditMiddleware())
+        self.dp.callback_query.middleware(AuditMiddleware())
         self.dp.include_router(get_router(self.bot))
-
         asyncio.create_task(self.process_queue())
         logger.info("BOT v3.0 STARTED")
         await self.dp.start_polling(self.bot)
