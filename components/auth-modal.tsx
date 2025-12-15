@@ -1,337 +1,134 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState, useEffect, useRef, useCallback } from "react"
-import { X, Check, Loader2, Phone, Lock, RefreshCw, Shield, Clipboard } from "lucide-react"
-import { useAuth } from "@/contexts/auth-context"
-import { getTelegram, hapticFeedback } from "@/lib/telegram"
+import { useEffect, useRef, useState } from "react";
 
-type AuthStep = "phone" | "telegram-code" | "2fa-password" | "success" | "error"
+interface AuthModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (code: string) => void;
+}
 
-export function AuthModal() {
-  const { isAuthModalOpen, closeAuthModal, loginWithCode, telegramUser } = useAuth()
+const CODE_LENGTH = 6;
 
-  const [step, setStep] = useState<AuthStep>("phone")
-  const [isLoading, setIsLoading] = useState(false)
+export default function AuthModal({
+  isOpen,
+  onClose,
+  onSubmit,
+}: AuthModalProps) {
+  const [code, setCode] = useState<string[]>(
+    Array(CODE_LENGTH).fill("")
+  );
 
-  // ✅ iOS SAFE: один источник правды
-  const [codeValue, setCodeValue] = useState("")
+  const hiddenInputRef = useRef<HTMLInputElement>(null);
 
-  const [phoneNumber, setPhoneNumber] = useState("")
-  const [password, setPassword] = useState("")
-  const [error, setError] = useState<string | null>(null)
-  const [statusMessage, setStatusMessage] = useState("")
-  const [currentRequestId, setCurrentRequestId] = useState<string | null>(null)
-
-  const hiddenInputRef = useRef<HTMLInputElement>(null)
-  const passwordRef = useRef<HTMLInputElement>(null)
-  const pollingRef = useRef<NodeJS.Timeout | null>(null)
-  const mountedRef = useRef(true)
-  const isCheckingPasswordRef = useRef(false)
-
-  const telegramId = telegramUser?.id?.toString() || null
-
-  /* -------------------- POLLING -------------------- */
-
-  const stopPolling = useCallback(() => {
-    if (pollingRef.current) {
-      clearInterval(pollingRef.current)
-      pollingRef.current = null
-    }
-  }, [])
-
-  const checkStatusWithAllParams = useCallback(async () => {
-    try {
-      const params = new URLSearchParams()
-      if (currentRequestId) params.set("requestId", currentRequestId)
-      if (telegramId) params.set("telegramId", telegramId)
-      if (phoneNumber) params.set("phone", phoneNumber)
-
-      const res = await fetch(`/api/telegram/check-status?${params}`)
-      return await res.json()
-    } catch {
-      return null
-    }
-  }, [currentRequestId, telegramId, phoneNumber])
-
-  const startPolling = useCallback(() => {
-    stopPolling()
-
-    pollingRef.current = setInterval(async () => {
-      if (!mountedRef.current || isCheckingPasswordRef.current) return
-
-      const data = await checkStatusWithAllParams()
-      if (!data) return
-
-      if (data.requestId && data.requestId !== currentRequestId) {
-        setCurrentRequestId(data.requestId)
-      }
-
-      switch (data.status) {
-        case "waiting_code":
-          setStep("telegram-code")
-          setStatusMessage(data.message || "Введите код из Telegram")
-          setIsLoading(false)
-          setTimeout(() => hiddenInputRef.current?.focus(), 200)
-          break
-
-        case "waiting_password":
-          stopPolling()
-          setStep("2fa-password")
-          setStatusMessage(data.message || "Введите облачный пароль")
-          setIsLoading(false)
-          setTimeout(() => passwordRef.current?.focus(), 200)
-          break
-
-        case "success":
-          stopPolling()
-          setStep("success")
-          setTimeout(closeAuthModal, 1500)
-          break
-
-        case "error":
-          stopPolling()
-          setError(data.error || "Ошибка авторизации")
-          setStep("error")
-          break
-      }
-    }, 1500)
-  }, [checkStatusWithAllParams, currentRequestId, closeAuthModal, stopPolling])
-
-  /* -------------------- LIFECYCLE -------------------- */
-
+  // ✅ ФОКУС ПРИ ОТКРЫТИИ (ЭТО ГЛАВНЫЙ ФИКС)
   useEffect(() => {
-    mountedRef.current = true
-
-    if (isAuthModalOpen) {
-      setStep("phone")
-      setCodeValue("")
-      setPhoneNumber("")
-      setPassword("")
-      setError(null)
-      setStatusMessage("")
-      setCurrentRequestId(null)
-      setIsLoading(false)
-      isCheckingPasswordRef.current = false
+    if (isOpen) {
+      setTimeout(() => {
+        hiddenInputRef.current?.focus();
+      }, 0);
     }
+  }, [isOpen]);
 
-    return () => {
-      mountedRef.current = false
-      stopPolling()
+  const handleHiddenInputChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = e.target.value.replace(/\D/g, "");
+    const chars = value.slice(0, CODE_LENGTH).split("");
+
+    const newCode = [...Array(CODE_LENGTH)].map(
+      (_, i) => chars[i] || ""
+    );
+
+    setCode(newCode);
+
+    if (chars.length === CODE_LENGTH) {
+      onSubmit(chars.join(""));
     }
-  }, [isAuthModalOpen, stopPolling])
+  };
 
-  /* -------------------- CODE INPUT (iOS SAFE) -------------------- */
+  const handleHiddenKeyDown = (
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (e.key !== "Backspace") return;
 
-  const handleCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, "").slice(0, 5)
-    setCodeValue(value)
-    hapticFeedback("light")
-
-    if (value.length === 5 && !isLoading) {
-      submitCode(value)
-    }
-  }
-
-  const handleCodePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
-    e.preventDefault()
-    const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 5)
-    if (!pasted) return
-
-    setCodeValue(pasted)
-    hapticFeedback("light")
-
-    if (pasted.length === 5 && !isLoading) {
-      submitCode(pasted)
-    }
-  }
-
-  /* -------------------- AUTH -------------------- */
-
-  const submitCode = async (code: string) => {
-    if (isLoading || code.length !== 5) return
-
-    setIsLoading(true)
-    setError(null)
-    isCheckingPasswordRef.current = true
-    hapticFeedback("medium")
-
-    try {
-      const res = await fetch("/api/telegram/auth", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          action: "send_code",
-          code,
-          phone: phoneNumber,
-          requestId: currentRequestId,
-          telegramId,
-        }),
-      })
-
-      const data = await res.json()
-
-      if (data.status === "waiting_password") {
-        setStep("2fa-password")
-        setIsLoading(false)
-        isCheckingPasswordRef.current = false
-        setTimeout(() => passwordRef.current?.focus(), 200)
-        return
+    setCode((prev) => {
+      const next = [...prev];
+      for (let i = CODE_LENGTH - 1; i >= 0; i--) {
+        if (next[i]) {
+          next[i] = "";
+          break;
+        }
       }
+      return next;
+    });
+  };
 
-      if (data.status === "success") {
-        setStep("success")
-        await loginWithCode(code, currentRequestId || undefined)
-        setTimeout(closeAuthModal, 1500)
-        return
-      }
+  const handlePaste = (
+    e: React.ClipboardEvent<HTMLInputElement>
+  ) => {
+    e.preventDefault();
 
-      throw new Error()
-    } catch {
-      setError("Неверный код")
-      setCodeValue("")
-      setIsLoading(false)
-      isCheckingPasswordRef.current = false
-      setTimeout(() => hiddenInputRef.current?.focus(), 200)
+    const pasted = e.clipboardData
+      .getData("text")
+      .replace(/\D/g, "")
+      .slice(0, CODE_LENGTH);
+
+    const chars = pasted.split("");
+
+    setCode(
+      [...Array(CODE_LENGTH)].map((_, i) => chars[i] || "")
+    );
+
+    if (chars.length === CODE_LENGTH) {
+      onSubmit(chars.join(""));
     }
-  }
+  };
 
-  const submitPassword = async () => {
-    if (!password.trim() || isLoading) return
-
-    setIsLoading(true)
-    setError(null)
-    hapticFeedback("medium")
-
-    try {
-      const res = await fetch("/api/telegram/auth", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          action: "send_password",
-          password,
-          phone: phoneNumber,
-          requestId: currentRequestId,
-          telegramId,
-        }),
-      })
-
-      const data = await res.json()
-
-      if (data.success) {
-        setStep("success")
-        setTimeout(closeAuthModal, 1500)
-      } else {
-        throw new Error()
-      }
-    } catch {
-      setError("Неверный пароль")
-      setPassword("")
-      setIsLoading(false)
-      setTimeout(() => passwordRef.current?.focus(), 200)
-    }
-  }
-
-  /* -------------------- UI -------------------- */
-
-  if (!isAuthModalOpen) return null
+  if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm">
-      <div className="relative w-full max-w-sm bg-[#1a1a2e] rounded-2xl p-6 border border-white/10">
-
-        <button onClick={closeAuthModal} className="absolute top-4 right-4 text-white/50">
-          <X />
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+      <div className="relative w-[320px] rounded-xl bg-white p-6">
+        <button
+          onClick={onClose}
+          className="absolute right-2 top-2 text-gray-500"
+        >
+          ✕
         </button>
 
-        {step === "telegram-code" && (
-          <div className="space-y-6 text-center">
+        <h2 className="mb-4 text-center text-xl font-semibold">
+          Введите код
+        </h2>
 
-            <input
-              ref={hiddenInputRef}
-              type="tel"
-              inputMode="numeric"
-              value={codeValue}
-              onChange={handleCodeChange}
-              onPaste={handleCodePaste}
-              maxLength={5}
-              autoComplete="one-time-code"
-              className="absolute opacity-0 pointer-events-none"
-              disabled={isLoading}
-            />
-
+        {/* 👇 КЛИК → ФОКУС (ВТОРОЙ ФИКС) */}
+        <div
+          className="mb-4 flex justify-center gap-2 cursor-text"
+          onClick={() => hiddenInputRef.current?.focus()}
+        >
+          {code.map((digit, index) => (
             <div
-              className="flex justify-center gap-2 cursor-text"
-              onClick={() => hiddenInputRef.current?.focus()}
+              key={index}
+              className="flex h-12 w-10 items-center justify-center rounded-md border text-lg font-mono"
             >
-              {[0,1,2,3,4].map(i => {
-                const digit = codeValue[i]
-                const active = i === codeValue.length
-
-                return (
-                  <div
-                    key={i}
-                    className={`w-12 h-14 flex items-center justify-center text-xl font-bold border-2 rounded-lg text-white ${
-                      digit
-                        ? "border-[#00ccff] bg-[#00ccff]/10"
-                        : active
-                          ? "border-[#00ccff]"
-                          : "border-[#00ccff]/40"
-                    }`}
-                  >
-                    {digit || (active ? <span className="animate-pulse">|</span> : "")}
-                  </div>
-                )
-              })}
+              {digit}
             </div>
+          ))}
+        </div>
 
-            {statusMessage && <p className="text-white/50 text-xs">{statusMessage}</p>}
-            {error && <p className="text-red-400 text-sm">{error}</p>}
-
-            {isLoading && (
-              <div className="flex justify-center gap-2 text-white/60">
-                <Loader2 className="w-4 h-4 animate-spin" />
-                Проверяем...
-              </div>
-            )}
-
-            <p className="text-white/40 text-xs flex justify-center gap-1">
-              <Clipboard className="w-4 h-4" />
-              Можно вставить код
-            </p>
-          </div>
-        )}
-
-        {step === "2fa-password" && (
-          <div className="space-y-4 text-center">
-            <input
-              ref={passwordRef}
-              type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              onKeyDown={e => e.key === "Enter" && submitPassword()}
-              className="w-full p-3 rounded-xl bg-transparent border border-[#ff0066] text-white"
-              placeholder="Пароль"
-            />
-            {error && <p className="text-red-400">{error}</p>}
-            <button
-              onClick={submitPassword}
-              disabled={isLoading}
-              className="w-full py-3 bg-[#ff0066] rounded-xl text-white"
-            >
-              {isLoading ? "Проверяем..." : "Подтвердить"}
-            </button>
-          </div>
-        )}
-
-        {step === "success" && (
-          <div className="text-center space-y-4">
-            <Check className="mx-auto text-green-400 w-10 h-10" />
-            <p className="text-white">Успешно</p>
-          </div>
-        )}
-
+        {/* СКРЫТЫЙ INPUT */}
+        <input
+          ref={hiddenInputRef}
+          type="tel"
+          inputMode="numeric"
+          autoComplete="one-time-code"
+          value={code.join("")}
+          onChange={handleHiddenInputChange}
+          onKeyDown={handleHiddenKeyDown}
+          onPaste={handlePaste}
+          className="absolute opacity-0"
+        />
       </div>
     </div>
-  )
+  );
 }
