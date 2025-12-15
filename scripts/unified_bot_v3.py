@@ -343,7 +343,16 @@ def get_router(bot: Bot) -> Router:
 
     @router.message(CommandStart())
     async def cmd_start(msg: types.Message, command: CommandObject):
-        logger.info(f"CMD_START triggered by {msg.from_user.id}")
+    tlog = get_thread_logger(
+        msg.chat.id,
+        msg.message_thread_id
+    )
+
+    tlog.info(
+        f"/start user_id={msg.from_user.id} "
+        f"username={msg.from_user.username} "
+        f"args={command.args}"
+    )
         try:
             uid = msg.from_user.id
             username = msg.from_user.username or f"ID:{uid}"
