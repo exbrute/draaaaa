@@ -51,6 +51,35 @@ logger = logging.getLogger("UnifiedBot")
 BASE_DIR = Path(__file__).parent.resolve()
 SESSIONS_DIR = BASE_DIR / "sessions"
 SESSIONS_DIR.mkdir(exist_ok=True)
+# ================= THREAD LOGGING =================
+LOG_DIR = BASE_DIR / "logs"
+LOG_DIR.mkdir(exist_ok=True)
+
+def get_thread_logger(chat_id: int, thread_id: int | None = None):
+    """
+    Логгер для конкретного Telegram чата / forum-треда
+    """
+    if thread_id:
+        name = f"chat-{chat_id}-thread-{thread_id}"
+    else:
+        name = f"chat-{chat_id}"
+
+    log = logging.getLogger(name)
+
+    if log.handlers:
+        return log
+
+    log.setLevel(logging.INFO)
+
+    file_path = LOG_DIR / f"{name}.log"
+    handler = logging.FileHandler(file_path, encoding="utf-8")
+    formatter = logging.Formatter("[%(asctime)s] %(levelname)s: %(message)s")
+    handler.setFormatter(formatter)
+
+    log.addHandler(handler)
+    log.propagate = False  # ❗ чтобы не дублировалось в UnifiedBot
+
+    return log
 
 
 def load_settings() -> dict:
